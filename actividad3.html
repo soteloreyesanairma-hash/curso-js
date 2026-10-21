@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- Formulario realizar cotizacion -->
+  <!-- Compra una PC / Portatil -->
+  <!-- Existen campos obligatorios / no obligatorios -->
+  <!-- Generar un cuadro de dialogo con la informacion -->
+  <!-- Aplicar estilos CSS -->
+
+  <h1>Cotizacion de PC</h1>
+  <form action="" id="cotizacion">
+    <div>
+      <label for="nombres">Nombres</label>
+      <input type="text" id="nombre" minlength="3" required>
+    </div>
+
+    <div>
+      <label for="apellidos">Apellidos</label>
+      <input type="text" id="apellidos" minlength="3" required>
+    </div>
+
+    <div>
+      <label for="email">Correo</label>
+      <input type="email" id="email" required>
+    </div>
+
+    <div>
+      <label for="tipo">Tipo de computadora</label>
+      <select name="tipo" id="tipo" required>
+        <option value=""></option>
+        <option value="1">PC escritorio</option>
+        <option value="2">PC portatil</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="procesador">Procesador *</label>
+      <select id="procesador" required>
+        <option value="">Seleccione un procesador</option>
+        <option value="1">Intel Core i5</option>
+        <option value="2">Intel Core i7</option>
+        <option value="3">AMD Ryzen 5</option>
+        <option value="4">AMD Ryzen 7</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="ram">Memoria RAM *</label>
+      <select id="ram" required>
+        <option value="">Seleccione la memoria RAM</option>
+        <option value="1">8 GB</option>
+        <option value="2">16 GB</option>
+        <option value="3">32 GB</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="comentario">Comentario adicional</label>
+      <input type="text" id="comentario">
+    </div>
+    <div>
+      <button type="submit">Enviar</button>
+      <button type="submit">Reiniciar</button>
+    </div>
+  </form>
+
+  <script>
+    const cotizacion = document.getElementById("cotizacion")
+    
+    cotizacion.addEventListener("submit", function(event){
+      event.preventDefault
+
+      if(confirm("Estas seguro de esta cotizacion")){
+        alert("Guardado correctamente")
+      }
+    })
+  </script>
+
+</body>
+
+</html>

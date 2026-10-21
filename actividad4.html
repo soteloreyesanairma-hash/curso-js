@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <!-- Construir un cuestionario -->
+  <!-- pregunta -->
+  <!-- 3 alternativas -->
+  <!-- Utilizar botones de desplazamiento para la navegacion  -->
+  <!-- Los datos que se iran mostrando deben estar en un objeto  -->
+  
+  <h1>Cuestionario sobre Programacion</h1>
+  <div id="pregunta"></div>
+  <div id="alternativa"></div>
+
+  <div>
+    <button type="button">Anterior</button>
+    <button type="button">Siguiente</button>
+  </div>
+
+  <script>
+    const cuestionario = {
+      titulo : "Evaluacion de Programacion",
+      nivel : "Facil",
+      contenido : [
+        { pregunta: "¿Que es una variable en programacion", alternativas},
+        { pregunta: "¿Para que sirve la funcion print o imprimir", alternativas},
+        { pregunta: "¿Que es un bucle", alternativas},
+        { pregunta: "¿Que es un condicional", alternativas},
+        { pregunta: "¿Que es un string", alternativas}
+      ]
+    }
+  </script>
+
+</body>
+</html>
