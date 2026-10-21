@@ -18,8 +18,8 @@
   <div id="alternativa"></div>
 
   <div>
-    <button type="button">Anterior</button>
-    <button type="button">Siguiente</button>
+    <button type="button" id="anterior">Anterior</button>
+    <button type="button" id="siguiente">Siguiente</button>
   </div>
 
   <script>
@@ -27,14 +27,64 @@
       titulo : "Evaluacion de Programacion",
       nivel : "Facil",
       contenido : [
-        { pregunta: "¿Que es una variable en programacion", alternativas},
-        { pregunta: "¿Para que sirve la funcion print o imprimir", alternativas},
-        { pregunta: "¿Que es un bucle", alternativas},
-        { pregunta: "¿Que es un condicional", alternativas},
-        { pregunta: "¿Que es un string", alternativas}
+        { pregunta: "¿Que es una variable en programacion", 
+        alternativas:["Un espacio en memoria que guarda un valor", "Un tipo de bucle", "Un error del programa"]},
+        
+        { pregunta: "¿Para que sirve la funcion print o imprimir",
+        alternativas:["Para mostrar informacion en pantalla", "Para borrar archivos", "Para crear variables"]},
+        
+        { pregunta: "¿Que es un bucle", 
+        alternativas:["Una estructura que repite instrucciones", "Un tipo de texto", "Una base de datos"]},
+        
+        { pregunta: "¿Que es un condicional", 
+        alternativas:["Una estructura que decide que codigo ejecutar", "Un numero decimal", "Un tipo de archivo"]},
+        
+        { pregunta: "¿Que es un string", 
+        alternativas: ["Un texto o cadena de caracteres", "Un numero entero", "Un valor verdadero o falso"]}
       ]
     }
-  </script>
 
+    const pregunta = document.getElementById("pregunta")
+    const alternativa = document.getElementById("alternativa")
+    const anterior = document.getElementById("anterior")
+    const siguiente = document.getElementById("siguiente")
+
+    let indice = 0
+
+    pregunta.innerHTML = cuestionario.contenido[indice].pregunta
+    let texto = ""
+    for(let i = 0; i < 3; i++){
+      texto = texto + `<div><input type ="radio" name="op"> 
+        ${cuestionario.contenido[indice].alternativas[i]}</div>`
+    }
+    alternativa.innerHTML = texto
+
+    siguiente.addEventListener("click", function(){
+      if(indice < cuestionario.contenido.length - 1){
+        indice = indice + 1
+        pregunta.innerHTML = cuestionario.contenido[indice].pregunta
+        let texto = ""
+        for(let i = 0; i < 3; i++){
+          texto = texto + `<div><input type ="radio" name="op"> 
+            ${cuestionario.contenido[indice].alternativas[i]}</div>`
+        }
+        alternativa.innerHTML = texto
+      }
+    })
+
+    anterior.addEventListener("click", function(){
+      if(indice > 0){
+        indice = indice - 1
+        pregunta.innerHTML = cuestionario.contenido[indice].pregunta
+        let texto = ""
+        for(let i = 0; i < 3; i++){
+          texto = texto + `<div><input type ="radio" name="op"> 
+            ${cuestionario.contenido[indice].alternativas[i]}</div>`
+        }
+        alternativa.innerHTML = texto
+      }
+    })
+
+  </script>
 </body>
 </html>

@@ -7,7 +7,7 @@ const mascota = {
   raza : "Golden",
   color : "Marron",
   edad :  4,
-  skills: ["juagar", "dormir", "comer"]
+  skills: ["jugar", "dormir", "comer"]
 }
 
 const {nombre, especie, raza, skills} = mascota
